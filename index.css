@@ -1,0 +1,726 @@
+/* Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  background-color: #dddddd ;
+  font-family: 'Bungee Outline', sans-serif;
+  font-weight: 900;
+  overflow-y:  hidden;
+  animation: blur 2s ease-in-out;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+* {
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Title Styles */
+#title_container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #4183c0, #081829);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  user-select: none;
+  min-height: auto;
+
+
+  /*box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.582);*/
+}
+
+
+
+#title_inner_container {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+}
+
+
+
+#title {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 55px;
+  letter-spacing: 0px;
+  user-select: none;
+}
+
+/* Join Form Styles */
+#join_container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-top: 300px;
+  z-index: 3000;
+
+}
+
+#join_inner_container {
+  width: 50%;
+  height: 100%;
+
+}
+
+#join_input_container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+#join_input {
+  width: 60%;
+  height: 40px;
+  color: #1D3354;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 2px solid #000000;
+
+  transition: ease-in-out 0.5s;
+  border-radius: 0px;
+}
+
+#join_input:hover {
+
+  background-color: #000000;
+  color: #ffffff;
+  transition: ease-in-out 0.5s;
+  border-radius: 6px;
+  
+}
+
+#join_input:focus {
+  caret-color: rgb(255, 255, 255); /* Change this to your desired color */
+}
+
+#join_input:focus {
+  box-shadow: 0 10px 30px -17px #1D3354;
+  background-color: #000000;
+  color: #ffffff;
+
+  transition: ease-in-out 0.4s;
+  border-radius: 20px;
+  font-size: 17px;
+}
+
+#join_input:focus::placeholder {
+  color: #a4a4a4;
+}
+
+#join_input:hover::placeholder {
+  color: #a4a4a4;
+}
+
+#join_button_container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+#join_button {
+  width: 60%;
+  height: 40px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 100px;
+
+}
+
+#join-button .enabled{
+   background-color: #000000;
+}
+
+#password_input_container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+#password_input {
+  width: 60%;
+  height: 40px;
+  color: #1D3354;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 2px solid #1D3354;
+  transition: ease-in-out 0.5s;
+}
+
+#password_input:hover {
+
+  color: #ffffff;
+  background-color: #000000;
+
+  
+  transition: ease-in-out 0.5s;
+
+  border-radius: 6px;
+}
+
+
+#password_input:focus {
+  box-shadow: 0 10px 30px -17px #1D3354;
+  background-color: #000000;
+  color: #ffffff;
+
+  transition: ease-in-out 0.4s;
+  border-radius: 20px;
+  font-size: 17px;
+  caret-color: rgb(255, 255, 255); /* Change this to your desired color */
+}
+
+#password_input:focus::placeholder {
+  color: #a4a4a4;
+}
+
+#password_input:hover::placeholder {
+  color: #a4a4a4;
+}
+
+
+
+/* Greeting Styles */
+#greeting_container {
+  background-color: #ffffff;
+  padding: 8px;
+  color: #000000;
+  text-align: left;
+}
+
+#greeting_text {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Chat Styles */
+
+  #chat_container {
+    width: 100%;
+    height: 89vh; /* Set the height to 100% of the viewport height */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Make the children stack vertically */
+    justify-content: space-between; /* Push content to the top and bottom */
+    margin-top: 0;
+    /* Fade in container */
+    animation: fadeIn 1s linear;
+    padding: 0;
+  }
+  
+
+#chat_inner_container {
+  width: 100%;
+  height: 100%;
+  margin-right: 0px;
+}
+
+#chat_content_container {
+  width: 100%;
+  height: 90%;
+  float: left;
+  overflow-y: auto;
+  font-family: 'Varela Round', sans-serif;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 100px;
+  margin-top: 30px;
+}
+
+#chat_input_container {
+  width: 100%;
+  max-height: auto; /* Change to auto to accommodate the chat input */
+  background-color: transparent;
+  padding-left: 30px;
+  padding-right: 15px;
+  font-family: "Varela Round", sans-serif;
+  margin-top: 10px;
+  display: flex; /* Use flexbox for better alignment */
+  align-items: flex-start; /* Align items at the top */
+  position: relative;
+  overflow: visible;
+  margin-top: 40px;
+}
+
+#chat_input {
+  width: 90%;
+  min-height: 60px; /* Set a minimum height to show at least one line */
+  max-height: 200px; /* Set a max height to enable scrolling if needed */
+  background-color: #f5f5f5;
+  color: #1D3354;
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 13px;
+  overflow-y: visible;
+  white-space: pre-wrap;
+  resize: vertical; /* Allow vertical resizing of the input */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  margin-top: 10px;
+  box-shadow: 0px -0px 10px 0.2px rgba(0, 0, 0, 0.2);
+  transition: ease-in-out 0.3s;
+
+}
+
+
+
+#chat_input:focus {
+  box-shadow: 0px -0px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: ease-in-out 0.3s;
+
+
+}
+
+
+
+#chat_input_send {
+  width: 45px;
+  height: 45px;
+  float: left;
+  font-size: 20px;
+  background-color: transparent;
+  text-align: center;
+  color: #212121;
+  z-index: 1000;
+  margin-left: 10px;
+  transition: ease-in-out 0.4s;
+  margin-top: 15px;
+
+}
+
+#chat_input_send.enabled {
+  color: #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+  background-color: #000000;
+  border-radius: 50%;
+  
+}
+
+#chat_logout_container {
+  width: 100%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-top: 20px;
+  background: none;
+  transition: ease-in-out 0.5s; /* Add transition to the container */
+  border-radius: 10px;
+}
+
+#chat_logout {
+  color: #000000;
+  cursor: pointer;
+  font-size: 16px; /* Initial font size */
+  transition: ease-in-out 0.5s; /* Add transition to the logout button */
+  border-radius: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+
+}
+
+#chat_logout:hover {
+  font-size: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 4px;
+}
+
+
+/* Message Styles */
+/* Apply the normal message styles to all messages */
+.message_container {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 12px 12px 12px 0px;
+  box-shadow: 0 4px 8px 0 rgba(9, 71, 106, 0.2);
+  transition: ease-in-out 0.3s;
+  margin-bottom: 20px;
+  max-width: 90%;
+  white-space: pre-wrap;
+  width: fit-content;
+  min-width: 200px;
+  margin-left: 30px;
+  transition: ease-in-out 0.3s;
+}
+
+/* Apply different styles for messages sent by the user */
+.message_container.sent {
+  margin-left: auto; /* Push the container to the right */
+  margin-right: 30px; /* Adjust margin on the right for spacing */
+  border-radius: 12px 12px 0px 12px; /* Adjust border-radius for appearance */
+  background-color: #D64045; /* Change background color for sent messages */
+  color: white; /* Change text color for sent messages */
+  box-shadow: 0 4px 8px 0 rgba(214, 64, 69, 0.2); /* Adjust shadow color for sent messages */
+}
+
+/* Apply different styles for messages received from others */
+.message_container.received {
+  margin-left: 30px;
+  margin-right: auto; /* Push the container to the left */
+  border-radius: 12px 12px 12px 0px;
+  background-color: #ffffff; /* Keep the background color for received messages */
+  color: #1D3354; /* Keep the text color for received messages */
+  box-shadow: 0 4px 8px 0 rgba(9, 71, 106, 0.2); /* Keep the shadow color for received messages */
+}
+
+
+.message_user {
+  position: relative;
+  color: #4183c0;
+}
+
+.message_user:hover {
+  background: none; /* Remove the background on hover */ 
+
+  cursor: pointer;
+}
+
+.new-sent-message {
+  background-color: lightblue; /* Change this color to the desired highlight color */
+  transition: background-color 0.5s; /* Add a transition effect for smooth color change */
+}
+
+/* Style for sent messages */
+.message_container.sent {
+  justify-content: flex-end;
+}
+
+/* Style for received messages */
+.message_container.received {
+  justify-content: flex-start;
+}
+
+/* ... Your existing CSS ... */
+
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.message_content_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  word-wrap: break-word;
+}
+
+.message_content {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0; /* Remove any default margins */
+  word-break: break-word; /* Break long words to avoid overflowing */
+}
+
+.message_container:hover {
+  transform: scale(1.04);
+  transition: ease-in-out 0.3s;
+  background-color: #ffffff;
+  box-shadow: 0 8px 8px 0 rgba(9, 71, 106, 0.2);
+}
+
+.message_container:hover:not(:hover) {
+  opacity: 0.5; /* Reduce opacity for messages that are not being hovered */
+}
+
+.message_user {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.message_container.sent {
+  justify-content: flex-end; /* Push your messages to the right */
+}
+
+.message_container.received {
+  justify-content: flex-start; /* Align received messages to the left */
+}
+
+.message_container.me {
+  background-color: #4caf50; /* Customize the styling for your messages */
+  color: white;
+}
+
+
+/* Styling for the timestamp in chat messages */
+.message_timestamp {
+  font-size: 10px;
+  color: #818181;
+  margin: 0;
+  padding-top: 10px;
+  user-select: none;
+}
+
+  .link-preview {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 400px;
+  }
+
+  .preview-image {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+  }
+
+  .preview-info {
+    flex: 1;
+  }
+
+  .preview-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .preview-description {
+    color: #666;
+  }
+
+
+/* Optional: Add this CSS to style the delete icon */
+.delete-icon {
+  color: red;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+
+.message_content_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message_content {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+  
+  .enabled{
+    transition: background-color 0.5s;
+    color: #fff;
+    background-color: #D64045; /*#5B7553;*/
+    cursor: pointer;
+  }
+  #title_container.chat_title_container{
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
+    height: 100px;
+  }
+  #title.chat_title{
+    transition: 0.8s;
+    font-size: 47px;
+  }
+  .loader_container{
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.5s linear infinite;
+  
+    border-top: 6px solid #5a5a5a;
+    border-bottom: 6px solid #5a5a5a;
+    border-left: 6px solid #e0dede;
+    border-right: 6px solid #5a5a5a;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes fadeIn {
+     0% {opacity: 0;}
+     100% {opacity: 1;}
+  }
+  @keyframes blur {
+    0% {filter: blur(10px);}
+    100% {}
+  }
+  ::selection {
+    background-color: #D64045;
+    color: #fff;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+    border-radius: 5px;
+  }
+
+  /* Increase width on hover */
+::-webkit-scrollbar:hover {
+  width: 10px; /* You can adjust this value to your desired width */
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Styles for the group chat container and list */
+#group_chat_container {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+
+#group_chat_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 2000;
+}
+
+#group_chat_list {
+  margin-bottom: 10px;
+  z-index: 2000;
+}
+
+/* Styles for the plus button */
+#group_chat_plus_button {
+  background-color: #3e64ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  z-index: 2000;
+}
+
+/* Styles for the search bar */
+#search_bar {
+  display: none;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  z-index: 2000;
+}
+
+#search_bar.active {
+  display: block;
+  width: 150px;
+}

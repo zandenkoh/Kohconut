@@ -267,57 +267,63 @@ window.onload = function() {
        //HAHHAAHAHAHAHHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHHAHAHHA//
    
 
-         // Inside the loop where you create the message containers
 
-         // Inside the loop where you create the message containers
-ordered.forEach(function(data) {
-  var name = data.name;
-  var message = data.message;
-  var timestamp = data.timestamp; // Get the timestamp from the message data
-  var isCurrentUser = name === parent.get_name(); // Check if the message is sent by the current user
-
-  var message_container = document.createElement('div');
-  message_container.setAttribute('class', `message_container ${isCurrentUser ? 'sent' : 'received'}`);
-  if (isCurrentUser) {
-    message_container.classList.add('new-sent-message', 'me'); // Add 'me' class for your messages
-  }
-  
-  var message_inner_container = document.createElement('div');
-  message_inner_container.setAttribute('class', 'message_inner_container');
-  
-  var message_user_container = document.createElement('div');
-  message_user_container.setAttribute('class', 'message_user_container');
-  
-  var message_user = document.createElement('p');
-  message_user.setAttribute('class', 'message_user');
-  message_user.textContent = `${name}`;
-  
-  var message_content_container = document.createElement('div');
-  message_content_container.setAttribute('class', 'message_content_container');
-  
-  var message_content = document.createElement('p');
-  message_content.setAttribute('class', 'message_content');
-  message_content.textContent = `${message}`;
-  
-  // Create the timestamp element
-  var message_timestamp = document.createElement('p');
-  message_timestamp.setAttribute('class', 'message_timestamp');
-  message_timestamp.textContent = new Date(timestamp).toLocaleString(); // Format the timestamp
-  
-  // Append everything to the message container
-  message_user_container.append(message_user);
-  message_content_container.append(message_content, message_timestamp); // Append the timestamp
-  message_inner_container.append(message_user_container, message_content_container);
-  message_container.append(message_inner_container);
-  
-  chat_content_container.append(message_container);
-});
-
-// Go to the recent message at the bottom of the container
-
-const lastMessage = chat_content_container.lastElementChild;
-lastMessage.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-
+       ordered.forEach(function (data) {
+        var name = data.name;
+        var message = data.message;
+        var timestamp = data.timestamp; // Get the timestamp from the message data
+        var isCurrentUser = name === parent.get_name(); // Check if the message is sent by the current user
+        
+        var message_container = document.createElement('div');
+        message_container.setAttribute('class', `message_container ${isCurrentUser ? 'sent' : 'received'}`);
+        
+        var message_inner_container = document.createElement('div');
+        message_inner_container.setAttribute('class', 'message_inner_container');
+        
+        var message_user_container = document.createElement('div');
+        message_user_container.setAttribute('class', 'message_user_container');
+        
+        var message_user = document.createElement('p');
+        message_user.setAttribute('class', 'message_user');
+        message_user.textContent = `${name}`;
+        
+        var message_content_container = document.createElement('div');
+        message_content_container.setAttribute('class', 'message_content_container');
+        
+        var message_content = document.createElement('p');
+        message_content.setAttribute('class', 'message_content');
+        message_content.textContent = `${message}`;
+        
+        var message_timestamp = document.createElement('p');
+        message_timestamp.setAttribute('class', 'message_timestamp');
+        var formattedTimestamp = formatTimestamp(timestamp);
+        message_timestamp.textContent = formattedTimestamp; // Format the timestamp
+        
+        message_user_container.append(message_user);
+        message_content_container.append(message_content, message_timestamp); // Append the timestamp
+        message_inner_container.append(message_user_container, message_content_container);
+        message_container.append(message_inner_container);
+        
+        chat_content_container.append(message_container);
+      });
+      
+      // Function to format the timestamp to 12-hour clock with AM/PM
+      function formatTimestamp(timestamp) {
+        var date = new Date(timestamp);
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // The hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var formattedTime = hours + ':' + minutes + ' ' + ampm;
+        return formattedTime;
+      }
+      
+    
+      // Go to the recent message at the bottom of the container
+      const lastMessage = chat_content_container.lastElementChild;
+      lastMessage.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 
 
 
@@ -358,6 +364,7 @@ lastMessage.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest"
             timestamp: timestamp,
             index: index,
             sender: '${parent.get_name()}' // Add this property to identify the sender
+            
 
           };
       
@@ -368,6 +375,13 @@ lastMessage.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest"
               parent.refresh_chat();
             });
         });
+
+
+
+
+
+
+
       }
       
       // Get name. Gets the username from localStorage
@@ -423,7 +437,17 @@ lastMessage.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest"
                 return true
               }
             })
-          })
+          }
+          
+          
+
+
+
+
+
+
+        )
+
 
 
 
@@ -509,7 +533,14 @@ lastMessage.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest"
   
 
       }
+
+
+
+
+
+
     }
+
 
 
 
